@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML标题</title>
+
+    <style>
+        #h1id {
+            color: chartreuse;
+            font-size: 50px;
+            align-content: center
+        }
+
+        .Xclass {
+            color: blue;
+            font-size: 60px;
+            align-content: center
+        }
+    </style>
+
+</head>
+
+<body><!-- dom节点 -->
+<!--字号标签-->
+<h1 id="h1id">一号字体h1id</h1>
+<h1>一号字体</h1>
+
+<h2 class="Xclass">二号字体</h2>
+<h2>二号字体</h2>
+<h3>三号字体</h3>
+
+<!--段落标签-->
+<p class="Xclass">
+    我是一个段落
+</p>
+
+<!--链接标签-->
+<a href="http://www.baidu.com">我是个链接，我会跳到百度</a>
+
+<!--表格标签-->
+<table>
+    <tr>
+        <th>性别</th>
+        <th>年龄</th>
+        <th>姓名</th>
+    </tr>
+    <tr>
+        <td>男</td>
+        <td>15</td>
+        <td>张三</td>
+    </tr>
+    <tr>
+        <td>女</td>
+        <td>34</td>
+        <td>李四</td>
+    </tr>
+</table>
+
+<!--图片标签-->
+<img id="srcid" src="https://www.baidu.com/img/bd_logo1.png?where=super">
+
+<!--下拉框标签-->
+<select>
+    <option>我是第1个</option>
+    <option>2</option>
+    <option>3</option>
+</select>
+
+<!--输入框标签-->
+<input type="text" id="username" value="xxxxxx" name="我是一个输入框">
+<input type="password" value="123456" name="我是一个密码">
+<input type="button" value="点我一下" onclick="clickM()" name="我是一个按钮">
+<input type="button" value="改变h1的值、颜色" onclick="clickM1()" name="我是一个按钮">
+<input type="button" value="验证用户名长度" onclick="clickM2()" name="我是一个按钮">
+
+<!--列表标签-->
+<ul>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+</ul>
+
+</body>
+
+<script src="src/jquery-3.4.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // //标签点击事件
+        // $("h1").click(function () {
+        //     $(this).hide(); //消失，隐藏
+        // })
+
+        // //标签选择器
+        // var h = $("h1");
+        // for (var i=0;i<h.length;i++){
+        //     alert(h[i].innerHTML);
+        // }
+
+        // //类选择器
+        // var cl = $(".Xclass");
+        // for (var i=0;i<cl.length;i++){
+        //     alert(cl[i].innerHTML);
+        // }
+
+        // //id选择器
+        // $("#srcid").click(function () {
+        //     $(this).attr('src',"https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3173584241,3533290860&fm=26&gp=0.jpg")
+        // })
+
+
+        //select-option,父子关系
+        var op = $("select").children("option");
+        for (var i = 0; i < op.length; i++) {
+            alert(op[i].index);
+        }
+
+        // $("select").append("<option>6</option>")
+
+    })
+
+    //id选择器，标签选择器，类选择器
+</script>
+
+
+<!--// document.write("<h1>你好 我是一个脚本</h1>")-->
+<!--//-->
+<!--// //对应input里面的onclick属性-->
+<!--// function clickM() {-->
+<!--// alert("我点了一下");-->
+<!--// }-->
+<!--//-->
+<!--// function clickM1() {-->
+<!--// document.getElementById("h1id").innerHTML = "我点你了 你变一下吧"; //改变内容-->
+<!--// document.getElementById("h1id").style.color = "red"; //改变颜色-->
+<!--// }-->
+<!--//-->
+<!--// function clickM2() {-->
+<!--// var v = document.getElementById("username");-->
+<!--// if(v.value.length>5){-->
+<!--// alert("哥们 太长了 不允许超过5")-->
+<!--// }-->
+<!--//-->
+<!--// for (var i=0;i<3;i++){-->
+<!--// alert("xxxxx")-->
+<!--// }-->
+<!--// }-->
+</html>
