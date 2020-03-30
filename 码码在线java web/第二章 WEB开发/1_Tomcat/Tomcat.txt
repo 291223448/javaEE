@@ -1,0 +1,3 @@
+Tomcat 是一个servlet/jsp(java server page) 规范的容器 开源 免费 Apache
+
+weblogic 功能更强大 J2EE规范 收费的 
