@@ -8,12 +8,6 @@ public class ServletDemo1 extends javax.servlet.http.HttpServlet {
         //tomcat 默认iso-8859-1编码
         String name = request.getParameter("nameP");
         String pwd = request.getParameter("pwdP");
-        String xx = (String) request.getSession().getAttribute("name");
-        System.out.println(xx);
-
-        //servlet 三大域  request 请求域 生命周期很短(一次请求完就结束了)  ServletRequest
-        //session 会话域  默认30min左右  控制登陆 标记登陆状态 标识一个会话  HttpSession
-        //context 应用域  生命周期最长  伴随整个应用  ServletContext
 
 //        String p = request.getContextPath(); //获取工程名
 //        String x = request.getRequestURI(); //请求的资源路径
@@ -31,12 +25,12 @@ public class ServletDemo1 extends javax.servlet.http.HttpServlet {
             out.println("<title>Demo1Servlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h2>Hello " + name + ", 欢迎菜鸟学习servlet </h2>");
-            out.println("<h2>the time right now is:" + new Date() + "</h2>");
+            out.println("<h2>Hello " +name +", 欢迎菜鸟学习servlet </h2>");
+            out.println("<h2>the time right now is:"+new Date()+"</h2>");
             out.println("</body>");
             out.println("</html>");
 
-        } finally {
+        }finally {
             out.close(); //关闭输出流
         }
 

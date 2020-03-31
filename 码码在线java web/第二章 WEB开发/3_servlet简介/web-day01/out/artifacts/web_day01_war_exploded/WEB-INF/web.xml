@@ -3,6 +3,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>EncodingFilter</filter-class>
+        <init-param>
+            <param-name>Encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>MyListener</listener-class>
+    </listener>
+
+    <session-config>
+        <session-timeout>2</session-timeout>
+    </session-config>
+
     <servlet>
         <servlet-name>Servlet1</servlet-name>
         <servlet-class>ServletDemo1</servlet-class>
